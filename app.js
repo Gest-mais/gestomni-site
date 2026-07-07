@@ -980,6 +980,8 @@ function renderPricing(plans, perMonthLabel, perYearLabel, trialBtnLabel) {
     let planDescription = "";
     let planPopular = false;
     let discountPercent = 20;
+    let priceHtml = "";
+    let subPriceHtml = "";
 
     if (useDatabasePlans) {
       isUsd = plan.currency === 'USD';
