@@ -938,7 +938,7 @@ nav {
 
 /* --- Pricing Section --- */
 .pricing-section {
-  padding: 100px 0;
+  padding: 60px 0;
   background-color: hsl(var(--bg-card) / 0.3);
   border-top: 1px solid hsl(var(--border));
   border-bottom: 1px solid hsl(var(--border));
@@ -997,8 +997,8 @@ nav {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
   align-items: stretch;
 }
 
@@ -1006,7 +1006,7 @@ nav {
   background-color: hsl(var(--bg-card));
   border: 1px solid hsl(var(--border));
   border-radius: var(--radius-md);
-  padding: 40px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1035,11 +1035,11 @@ nav {
 }
 
 .pricing-card-header {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .pricing-plan-name {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 12px;
 }
 
@@ -1087,8 +1087,8 @@ nav {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 40px;
+  gap: 12px;
+  margin-bottom: 24px;
   flex-grow: 1;
 }
 
@@ -2009,7 +2009,7 @@ footer {
 
 .pricing-free-title {
   font-family: var(--font-heading);
-  font-size: 3.2rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: #fff;
   line-height: 1.1;
@@ -2019,7 +2019,7 @@ footer {
 }
 
 .pricing-after-trial {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: hsl(var(--text-secondary));
   margin-top: 4px;
@@ -2030,8 +2030,8 @@ footer {
 .pricing-header-banner {
   background: linear-gradient(135deg, hsl(217, 91%, 50%) 0%, hsl(217, 91%, 60%) 100%);
   border-radius: var(--radius-lg);
-  padding: 60px 40px 140px 40px;
-  margin-bottom: -100px; /* Pull the pricing grid up to overlap */
+  padding: 40px 20px 80px 20px;
+  margin-bottom: -50px; /* Pull the pricing grid up to overlap */
   position: relative;
   z-index: 1;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 50px hsl(217, 91%, 50% / 0.1);
@@ -2083,7 +2083,7 @@ footer {
 
 @media (max-width: 768px) {
   .pricing-header-banner {
-    padding: 40px 20px 100px 20px;
-    margin-bottom: -70px;
+    padding: 30px 15px 60px 15px;
+    margin-bottom: -40px;
   }
 }
