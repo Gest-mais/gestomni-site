@@ -944,6 +944,11 @@ nav {
   border-bottom: 1px solid hsl(var(--border));
 }
 
+.pricing-section .container {
+  max-width: 1500px;
+  padding: 0 2%;
+}
+
 .pricing-toggle-container {
   display: flex;
   align-items: center;
@@ -997,7 +1002,7 @@ nav {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 20px;
   align-items: stretch;
 }
@@ -1048,8 +1053,8 @@ nav {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 6px;
-  margin-bottom: 16px;
+  gap: 4px;
+  margin-bottom: 12px;
   width: 100%;
 }
 
@@ -1072,31 +1077,31 @@ nav {
 }
 
 .pricing-card-description {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: hsl(var(--text-secondary));
-  min-height: 50px;
+  min-height: auto;
 }
 
 .pricing-divider {
   height: 1px;
   background-color: hsl(var(--border));
-  margin: 30px 0;
+  margin: 16px 0;
 }
 
 .pricing-features-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: 8px;
+  margin-bottom: 20px;
   flex-grow: 1;
 }
 
 .pricing-features-list li {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 0.95rem;
+  gap: 8px;
+  font-size: 0.88rem;
 }
 
 .pricing-features-list li svg {
@@ -2030,8 +2035,8 @@ footer {
 .pricing-header-banner {
   background: linear-gradient(135deg, hsl(217, 91%, 50%) 0%, hsl(217, 91%, 60%) 100%);
   border-radius: var(--radius-lg);
-  padding: 40px 20px 80px 20px;
-  margin-bottom: -50px; /* Pull the pricing grid up to overlap */
+  padding: 30px 20px 70px 20px;
+  margin-bottom: -40px; /* Pull the pricing grid up to overlap */
   position: relative;
   z-index: 1;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 50px hsl(217, 91%, 50% / 0.1);
