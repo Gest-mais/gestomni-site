@@ -17,6 +17,10 @@ const DEFAULT_CONFIG = {
   partner2Name: "Efi Bank",
   partner3Name: "Mercado Pago",
   partner4Name: "PagSeguro",
+  partner1Logo: "",
+  partner2Logo: "",
+  partner3Logo: "",
+  partner4Logo: "",
   logoImgUrl: "logo.png",
   heroBanner1Url: "banner.png",
   heroBanner2Url: "video_cover.png",
@@ -920,6 +924,27 @@ function hydrateDOM() {
   safeSetText("partner-text-3", siteConfig.partner3Name || "Mercado Pago");
   safeSetText("partner-text-4", siteConfig.partner4Name || "PagSeguro");
 
+  // Hydrate Partner Logos
+  const hydratePartnerLogo = (imgId, fallbackId, logoUrl) => {
+    const img = document.getElementById(imgId);
+    const fallback = document.getElementById(fallbackId);
+    if (img && fallback) {
+      if (logoUrl && logoUrl.trim() !== "") {
+        img.src = logoUrl;
+        img.style.display = "block";
+        fallback.style.display = "none";
+      } else {
+        img.src = "";
+        img.style.display = "none";
+        fallback.style.display = "block";
+      }
+    }
+  };
+  hydratePartnerLogo("partner-logo-1", "fallback-logo-1", siteConfig.partner1Logo);
+  hydratePartnerLogo("partner-logo-2", "fallback-logo-2", siteConfig.partner2Logo);
+  hydratePartnerLogo("partner-logo-3", "fallback-logo-3", siteConfig.partner3Logo);
+  hydratePartnerLogo("partner-logo-4", "fallback-logo-4", siteConfig.partner4Logo);
+
   // Hydrate Footer static content
   safeSetText("footer-tagline", t.footer.tagline);
   const rightsEl = document.getElementById("footer-rights");
@@ -1550,6 +1575,16 @@ function loadAdminFormFields() {
   if (partner3Input) partner3Input.value = siteConfig.partner3Name || "Mercado Pago";
   const partner4Input = document.getElementById("input-partner-4");
   if (partner4Input) partner4Input.value = siteConfig.partner4Name || "PagSeguro";
+
+  // Partner Logos Previews
+  const p1Preview = document.getElementById("preview-partner1Logo");
+  if (p1Preview) p1Preview.src = siteConfig.partner1Logo || "";
+  const p2Preview = document.getElementById("preview-partner2Logo");
+  if (p2Preview) p2Preview.src = siteConfig.partner2Logo || "";
+  const p3Preview = document.getElementById("preview-partner3Logo");
+  if (p3Preview) p3Preview.src = siteConfig.partner3Logo || "";
+  const p4Preview = document.getElementById("preview-partner4Logo");
+  if (p4Preview) p4Preview.src = siteConfig.partner4Logo || "";
 
   // 2. Hero Tab
   document.getElementById("input-hero-badge").value = t.hero.badge;
