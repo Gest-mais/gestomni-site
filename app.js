@@ -1114,7 +1114,7 @@ function renderPricing(plans, perMonthLabel, perYearLabel, trialBtnLabel) {
         ${popularBadgeHtml}
         <div class="pricing-card-header">
           <h3 class="pricing-plan-name">${plan.name}</h3>
-          <div class="pricing-price-container" style="flex-direction: row; align-items: baseline;">
+          <div class="pricing-price-container">
             ${priceHtml}
           </div>
           ${subPriceHtml}
