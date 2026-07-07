@@ -1,5 +1,9 @@
 {
   "adminPassword": "admin",
+  "partner1Name": "Mercado Livre",
+  "partner2Name": "Efi Bank",
+  "partner3Name": "Mercado Pago",
+  "partner4Name": "PagSeguro",
   "youtubeIdPt": "dQw4w9WgXcQ",
   "youtubeIdEn": "dQw4w9WgXcQ",
   "trialLink": "https://gestomni.com/signup",

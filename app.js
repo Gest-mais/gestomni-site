@@ -13,6 +13,10 @@ const DEFAULT_CONFIG = {
   googleAnalyticsId: "",
   supabaseUrl: "https://okvvtrcdwshzfjfapgyl.supabase.co",
   supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9rdnZ0cmNkd3NoemZqZmFwZ3lsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI2OTYzMTEsImV4cCI6MjA5ODI3MjMxMX0.FrR1d79hnJKDzBpZZl9Ddp1fjmuHYQ9Zadq4VC8Hilo",
+  partner1Name: "Mercado Livre",
+  partner2Name: "Efi Bank",
+  partner3Name: "Mercado Pago",
+  partner4Name: "PagSeguro",
   logoImgUrl: "logo.png",
   heroBanner1Url: "banner.png",
   heroBanner2Url: "video_cover.png",
@@ -871,28 +875,33 @@ function hydrateDOM() {
   safeSetText("pricing-title", t.pricing.title);
   safeSetText("pricing-subtitle", t.pricing.subtitle);
   
-  let maxDiscount = 20; // fallback
+  let middleDiscount = 20; // default fallback
   const useDatabasePlans = databasePlans && databasePlans.length > 0;
   if (useDatabasePlans) {
-    const discounts = databasePlans.map(p => Number(p.yearly_discount_percent !== null && p.yearly_discount_percent !== undefined ? p.yearly_discount_percent : 20));
-    maxDiscount = Math.max(...discounts);
+    const middlePlan = databasePlans.find(plan => plan.display_order === 2 || plan.name.toLowerCase().includes("growth") || plan.name.toLowerCase().includes("crescimento")) || databasePlans[1] || databasePlans[0];
+    if (middlePlan) {
+      middleDiscount = Number(middlePlan.yearly_discount_percent !== null && middlePlan.yearly_discount_percent !== undefined ? middlePlan.yearly_discount_percent : 20);
+    }
   } else {
     const staticPlans = t.pricing.plans || [];
-    if (staticPlans.length > 0) {
-      const discounts = staticPlans.map(p => {
-        const fullMonthly = p.priceMonthly * 12;
-        const discount = ((fullMonthly - p.priceYearly) / fullMonthly) * 100;
-        return Math.round(discount);
-      });
-      maxDiscount = Math.max(...discounts, 20);
+    if (staticPlans.length >= 2) {
+      const middlePlan = staticPlans[1];
+      const fullMonthly = middlePlan.priceMonthly * 12;
+      const discount = ((fullMonthly - middlePlan.priceYearly) / fullMonthly) * 100;
+      middleDiscount = Math.round(discount);
+    } else if (staticPlans.length > 0) {
+      const p = staticPlans[0];
+      const fullMonthly = p.priceMonthly * 12;
+      const discount = ((fullMonthly - p.priceYearly) / fullMonthly) * 100;
+      middleDiscount = Math.round(discount);
     }
   }
 
   safeSetText("billing-monthly-lbl", t.pricing.monthly);
   
   const yearlyHtml = activeLang === "en" 
-    ? `Yearly <span class="discount-badge" style="background: hsl(var(--secondary) / 0.15); border: 1px solid hsl(var(--secondary) / 0.3); color: hsl(var(--secondary-hover)); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-left: 6px;">Save up to ${maxDiscount}%</span>`
-    : `Anual <span class="discount-badge" style="background: hsl(var(--secondary) / 0.15); border: 1px solid hsl(var(--secondary) / 0.3); color: hsl(var(--secondary-hover)); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-left: 6px;">Economize até ${maxDiscount}%</span>`;
+    ? `Yearly <span class="discount-badge" style="background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.2); color: #0f3562; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; margin-left: 6px; display: inline-block;">Save up to ${middleDiscount}%</span>`
+    : `Anual <span class="discount-badge" style="background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.2); color: #0f3562; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; margin-left: 6px; display: inline-block;">Economize até ${middleDiscount}%</span>`;
   safeSetHtml("billing-yearly-lbl", yearlyHtml);
 
   // Dynamically populate pricing cards
@@ -904,6 +913,12 @@ function hydrateDOM() {
 
   // Dynamically populate FAQs
   renderFAQs(t.faq.items);
+
+  // Hydrate Partner Company Names
+  safeSetText("partner-text-1", siteConfig.partner1Name || "Mercado Livre");
+  safeSetText("partner-text-2", siteConfig.partner2Name || "Efi Bank");
+  safeSetText("partner-text-3", siteConfig.partner3Name || "Mercado Pago");
+  safeSetText("partner-text-4", siteConfig.partner4Name || "PagSeguro");
 
   // Hydrate Footer static content
   safeSetText("footer-tagline", t.footer.tagline);
@@ -1325,6 +1340,23 @@ function setupEventListeners() {
     });
   }
 
+  // Mobile Hamburger Menu Action
+  const menuToggle = document.getElementById("menu-toggle");
+  const headerNav = document.getElementById("header-nav");
+  if (menuToggle && headerNav) {
+    menuToggle.addEventListener("click", () => {
+      menuToggle.classList.toggle("active");
+      headerNav.classList.toggle("open");
+    });
+    
+    headerNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        menuToggle.classList.remove("active");
+        headerNav.classList.remove("open");
+      });
+    });
+  }
+
   // Monthly / Annual Pricing Toggle
   const pricingSwitch = document.getElementById("pricing-switch");
   if (pricingSwitch) {
@@ -1509,6 +1541,16 @@ function loadAdminFormFields() {
   document.getElementById("input-demo-link").value = siteConfig.demoLink;
   document.getElementById("input-admin-password").value = siteConfig.adminPassword;
 
+  // Partner Names
+  const partner1Input = document.getElementById("input-partner-1");
+  if (partner1Input) partner1Input.value = siteConfig.partner1Name || "Mercado Livre";
+  const partner2Input = document.getElementById("input-partner-2");
+  if (partner2Input) partner2Input.value = siteConfig.partner2Name || "Efi Bank";
+  const partner3Input = document.getElementById("input-partner-3");
+  if (partner3Input) partner3Input.value = siteConfig.partner3Name || "Mercado Pago";
+  const partner4Input = document.getElementById("input-partner-4");
+  if (partner4Input) partner4Input.value = siteConfig.partner4Name || "PagSeguro";
+
   // 2. Hero Tab
   document.getElementById("input-hero-badge").value = t.hero.badge;
   document.getElementById("input-hero-title").value = t.hero.title;
@@ -1649,6 +1691,10 @@ function setupAdminFormInputListeners() {
     { id: "input-admin-password", key: "adminPassword", type: "global" },
     { id: "input-supabase-url", key: "supabaseUrl", type: "global" },
     { id: "input-supabase-anon-key", key: "supabaseAnonKey", type: "global" },
+    { id: "input-partner-1", key: "partner1Name", type: "global" },
+    { id: "input-partner-2", key: "partner2Name", type: "global" },
+    { id: "input-partner-3", key: "partner3Name", type: "global" },
+    { id: "input-partner-4", key: "partner4Name", type: "global" },
     // Hero
     { id: "input-hero-badge", key: "hero.badge" },
     { id: "input-hero-title", key: "hero.title" },
@@ -2022,18 +2068,30 @@ function setupAdminImageListeners() {
 
       compressAndSaveImage(file, key, async (base64Data) => {
         try {
-          const blob = dataURLtoBlob(base64Data);
-          const ext = file.type === "image/png" ? "png" : "jpg";
-          const filename = `${key}_${Date.now()}.${ext}`;
+          let newUrl = base64Data;
+          const supabaseUrl = siteConfig.supabaseUrl || DEFAULT_CONFIG.supabaseUrl;
+          const supabaseAnonKey = siteConfig.supabaseAnonKey || DEFAULT_CONFIG.supabaseAnonKey;
           
-          // 1. Delete old image from Supabase Storage if it exists
-          const oldUrl = siteConfig[key];
-          if (oldUrl) {
-            await deleteImageFromSupabase(oldUrl);
+          if (supabaseUrl && supabaseAnonKey && !supabaseUrl.includes("your-supabase-project")) {
+            try {
+              const blob = dataURLtoBlob(base64Data);
+              const ext = file.type === "image/png" ? "png" : "jpg";
+              const filename = `${key}_${Date.now()}.${ext}`;
+              
+              // 1. Delete old image from Supabase Storage if it exists
+              const oldUrl = siteConfig[key];
+              if (oldUrl && oldUrl.startsWith("http")) {
+                await deleteImageFromSupabase(oldUrl);
+              }
+              
+              // 2. Upload new image
+              newUrl = await uploadImageToSupabase(blob, filename);
+              console.log("Uploaded successfully to Supabase Storage");
+            } catch (supabaseErr) {
+              console.warn("Failed to upload to Supabase, falling back to local Base64 storage:", supabaseErr);
+              newUrl = base64Data;
+            }
           }
-          
-          // 2. Upload new image
-          const newUrl = await uploadImageToSupabase(blob, filename);
           
           // Update config
           siteConfig[key] = newUrl;
@@ -2048,15 +2106,15 @@ function setupAdminImageListeners() {
           const textInput = document.getElementById(`input-img-${key}`);
           if (textInput) {
             textInput.value = "";
-            textInput.placeholder = "Imagem salva no Supabase Storage";
+            textInput.placeholder = newUrl.startsWith("data:") ? "Salvo localmente (Base64)" : "Salvo no Supabase Storage";
           }
           
           // Update page dynamic elements
           hydrateDOM();
-          console.log(`Imagem salva com sucesso: ${newUrl}`);
+          console.log(`Imagem salva com sucesso!`);
         } catch (err) {
-          console.error("Erro ao fazer upload da imagem:", err);
-          alert("Erro ao enviar imagem. Verifique a conexão com o Supabase.");
+          console.error("Erro ao processar imagem:", err);
+          alert("Erro ao processar imagem.");
         } finally {
           document.body.style.cursor = "default";
         }
