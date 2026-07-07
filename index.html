@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" id="meta-desc" content="Level the playing field. Get the exact same AI-powered tools, marketplace integrations, and financial tracking that retail giants spend millions on.">
+  <title id="meta-title">Gest'Omni - Enterprise-Grade Retail & Financial Management for Small Businesses</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%236d28d9%22/><path d=%22M30 40 L50 25 L70 40 L70 75 L30 75 Z%22 fill=%22none%22 stroke=%22white%22 stroke-width=%228%22 stroke-linejoin=%22round%22/><path d=%22M40 55 L50 65 L65 50%22 fill=%22none%22 stroke=%22%2310b981%22 stroke-width=%228%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Decorative Glowing Spheres -->
+  <div class="bg-glow-container">
+    <div class="glow-sphere glow-1"></div>
+    <div class="glow-sphere glow-2"></div>
+    <div class="glow-sphere glow-3"></div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header id="site-header">
+    <div class="container header-container">
+      <div class="logo" id="header-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <img src="logo.png" alt="Gest'Omni Logo" class="brand-logo-img">
+        <span>Gest'Omni</span>
+      </div>
+      
+      <!-- Nav Links -->
+      <nav id="header-nav">
+        <ul class="nav-links">
+          <li><a href="#features" id="nav-features">Features</a></li>
+          <li><a href="#mission" id="nav-mission">Our Purpose</a></li>
+          <li><a href="#pricing" id="nav-pricing">Pricing</a></li>
+          <li><a href="#faq" id="nav-faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Language switch & CTA -->
+      <div class="nav-actions">
+        <!-- Language Switcher Pill -->
+        <div class="lang-switcher" id="lang-switcher" data-lang="en">
+          <div class="lang-slider"></div>
+          <div class="lang-option active" data-opt="en">EN</div>
+          <div class="lang-option" data-opt="pt">PT</div>
+        </div>
+        <a href="#" class="btn btn-primary btn-small nav-cta-btn" id="nav-cta">Get Started</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    
+    <!-- Hero Carousel Slider -->
+    <section class="hero-carousel-root" id="home">
+      <div class="carousel-container">
+        
+        <!-- Slide 1: Gest'Omni General -->
+        <div class="hero-slide active" id="hero-slide-1" style="background-image: linear-gradient(rgba(7, 10, 19, 0.4), rgba(7, 10, 19, 0.85)), url('banner.png');">
+          <div class="container slide-content-wrapper">
+            <div class="slide-left-text">
+              <span class="badge">🚀 Gest'Omni</span>
+              <h2 id="hero-slide1-title">Evolução Comercial Inteligente e Confiável.</h2>
+              <p id="hero-slide1-desc">Automatize a gestão, otimize o estoque e impulsione as vendas com nossa plataforma SaaS de nível corporativo. Experimente o futuro do seu negócio.</p>
+              <div class="hero-cta-container">
+                <a href="#pricing" class="btn btn-primary trial-btn" id="hero-slide1-btn">Começar Teste Grátis de 30 Dias</a>
+                <span class="hero-cta-subtext" id="hero-slide1-subtext">Sem necessidade de cartão</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: IA Invoice Parser -->
+        <div class="hero-slide" id="hero-slide-2" style="background-image: linear-gradient(rgba(7, 10, 19, 0.6), rgba(7, 10, 19, 0.9)), url('video_cover.png');">
+          <div class="container slide-content-wrapper">
+            <div class="slide-left-text">
+              <span class="badge">Gemini AI</span>
+              <h2>Leitor de Notas Fiscais com Inteligência Artificial</h2>
+              <p>Arraste e solte arquivos XML ou PDF de suas notas fiscais DANFE. Nossa inteligência artificial extrai fornecedores, produtos, quantidades e preços de custo em segundos.</p>
+              <a href="#pricing" class="btn btn-primary trial-btn">Iniciar Testes</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Multi-channel Sync -->
+        <div class="hero-slide" id="hero-slide-3" style="background-image: linear-gradient(rgba(7, 10, 19, 0.5), rgba(7, 10, 19, 0.85)), url('banner.png');">
+          <div class="container slide-content-wrapper">
+            <div class="slide-left-text">
+              <span class="badge">Integração</span>
+              <h2>Sincronização de Canais de Venda Online</h2>
+              <p>Sincronize seu estoque físico com anúncios da Shopee e Mercado Livre. Realize vendas na sua frente de caixa física (PDV) e veja seus estoques online atualizar em tempo real.</p>
+              <a href="#pricing" class="btn btn-primary trial-btn">Iniciar Testes</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slider Controls -->
+      <button class="slider-control prev" id="slider-prev" aria-label="Anterior">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button class="slider-control next" id="slider-next" aria-label="Próximo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+      <!-- Slider Indicators -->
+      <div class="slider-indicators">
+        <span class="slider-dot active" data-slide="0"></span>
+        <span class="slider-dot" data-slide="1"></span>
+        <span class="slider-dot" data-slide="2"></span>
+      </div>
+    </section>
+
+    <!-- Split Video Section -->
+    <section class="video-section black-bg" id="video">
+      <div class="container">
+        <div class="video-grid-row">
+          <div class="video-col-left">
+            <div class="video-wrapper" id="video-wrapper">
+              <!-- Fallback Interactive Video Preview Panel (Loads Iframe on Click to prevent API overhead and support empty ID states) -->
+              <div class="video-placeholder" id="video-placeholder">
+                <div class="play-button-glow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                  </svg>
+                </div>
+                <h4 id="video-placeholder-text" style="font-size: 1.1rem; color: hsl(var(--text-secondary)); font-weight: 500;">Clique para assistir</h4>
+              </div>
+              <div id="player-container" style="width: 100%; height: 100%;"></div>
+            </div>
+          </div>
+          <div class="video-col-right">
+            <h2 id="video-section-title">Gest'Omni: plataforma integrada de soluções inteligentes para varejo</h2>
+            <p id="video-section-desc">Do controle de estoque automatizado à conciliação financeira complexa, ajudamos lojistas e artesãs a alavancarem suas operações com velocidade, tecnologia de ponta e suporte dedicado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Segments & Solutions Tabs Section -->
+    <section class="tabs-section white-bg pt-5 pb-5" id="segments">
+      <div class="container">
+        <div class="tabs-header-row">
+          <div class="tabs-title-side">
+            <h2>Encontre as soluções ideais para o seu negócio</h2>
+          </div>
+        </div>
+        
+        <div class="tabs-container">
+          <div class="tabs-navigation">
+            <button class="tab-nav-btn active" data-target="tab-segments">Segmentos e Atividades</button>
+            <button class="tab-nav-btn" data-target="tab-solutions">Módulos e Soluções</button>
+          </div>
+
+          <div class="tabs-content">
+            <!-- Pane 1: Segmentos -->
+            <div class="tab-pane active" id="tab-segments">
+              <div class="features-grid">
+                
+                <!-- Card 1: Lojistas e Varejo -->
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" id="card-seg-1-front" style="background-image: linear-gradient(rgba(15, 53, 98, 0.8), rgba(7, 10, 19, 0.95)), url('banner.png');">
+                      <div class="card-content">
+                        <h3>Lojas de Varejo</h3>
+                        <p>Sincronização multicanal de estoque, frente de caixa integrada and leitura automática de notas fiscais de fornecedores.</p>
+                        <span class="see-more">Ver Solução</span>
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                      <div class="card-content">
+                        <h3>Lojas de Varejo</h3>
+                        <p>Frente de caixa rápida (PDV), controle de variações (cores/tamanhos), auditoria de movimentações e suporte prioritário via WhatsApp.</p>
+                        <a href="#pricing" class="btn btn-primary btn-small">Ver Planos</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 2: Artesãs e Criadores -->
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" id="card-seg-2-front" style="background-image: linear-gradient(rgba(15, 53, 98, 0.8), rgba(7, 10, 19, 0.95)), url('video_cover.png');">
+                      <div class="card-content">
+                        <h3>Artesãos & Ateliês</h3>
+                        <p>Controle fino de encomendas sob medida, depósitos e parcelas, e acerto de matérias-primas com parceiras.</p>
+                        <span class="see-more">Ver Solução</span>
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                      <div class="card-content">
+                        <h3>Artesãos & Ateliês</h3>
+                        <p>Painel de encomendas personalizado, gestão de créditos e débitos com fiadores externos e relatórios de lucratividade líquida.</p>
+                        <a href="#pricing" class="btn btn-primary btn-small">Ver Planos</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 3: E-commerce -->
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" id="card-seg-3-front" style="background-image: linear-gradient(rgba(15, 53, 98, 0.8), rgba(7, 10, 19, 0.95)), url('banner.png');">
+                      <div class="card-content">
+                        <h3>E-commerce & Marketplaces</h3>
+                        <p>Integração oficial de anúncios, controle automático de estoque unificado e emissão de alertas de despacho.</p>
+                        <span class="see-more">Ver Solução</span>
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                      <div class="card-content">
+                        <h3>E-commerce & Marketplaces</h3>
+                        <p>Links reativos e automações com Shopee e Mercado Livre, evitando vendas duplicadas e faturando com alta segurança.</p>
+                        <a href="#pricing" class="btn btn-primary btn-small">Ver Planos</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Pane 2: Soluções/Módulos -->
+            <div class="tab-pane" id="tab-solutions">
+              <div class="features-grid">
+                
+                <!-- Card 1: POS / PDV -->
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" id="card-sol-1-front" style="background-image: linear-gradient(rgba(15, 53, 98, 0.8), rgba(7, 10, 19, 0.95)), url('video_cover.png');">
+                      <div class="card-content">
+                        <h3>PDV & Frente de Caixa</h3>
+                        <p>Venda rápida com leitor de código de barras, variações integradas, descontos em lote e estornos na hora.</p>
+                        <span class="see-more">Ver Recursos</span>
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                      <div class="card-content">
+                        <h3>PDV & Frente de Caixa</h3>
+                        <p>Interface ultra veloz adaptada para celular, tablet e computador. Gerencie operadores de caixa de forma centralizada.</p>
+                        <a href="#pricing" class="btn btn-primary btn-small">Ver Planos</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 2: IA Gemini Parser -->
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" id="card-sol-2-front" style="background-image: linear-gradient(rgba(15, 53, 98, 0.8), rgba(7, 10, 19, 0.95)), url('banner.png');">
+                      <div class="card-content">
+                        <h3>Importador Inteligente (IA)</h3>
+                        <p>Gemini AI lê notas fiscais eletrônicas em PDF ou XML, cadastrando itens e custos automaticamente.</p>
+                        <span class="see-more">Ver Recursos</span>
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                      <div class="card-content">
+                        <h3>Importador Inteligente (IA)</h3>
+                        <p>Acabe com o cadastro manual e demorado de mercadorias. A IA correlaciona fornecedores e atualiza custos instantaneamente.</p>
+                        <a href="#pricing" class="btn btn-primary btn-small">Ver Planos</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 3: Auditoria Imutável -->
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" id="card-sol-3-front" style="background-image: linear-gradient(rgba(15, 53, 98, 0.8), rgba(7, 10, 19, 0.95)), url('video_cover.png');">
+                      <div class="card-content">
+                        <h3>Auditoria Imutável</h3>
+                        <p>Ledger de segurança no PostgreSQL do Supabase rastreando cada entrada e saída de estoque permanentemente.</p>
+                        <span class="see-more">Ver Recursos</span>
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                      <div class="card-content">
+                        <h3>Auditoria Imutável</h3>
+                        <p>Transparência total na operação: saiba exatamente quem moveu cada item, qual foi o motivo e em qual data/hora.</p>
+                        <a href="#pricing" class="btn btn-primary btn-small">Ver Planos</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Pricing / Subscription Section -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="pricing-title">Simple, Transparent Pricing</h2>
+          <p id="pricing-subtitle">No hidden fees. Pay monthly or save with our annual plans. All features included.</p>
+        </div>
+
+        <!-- Monthly / Annual Billing Toggle Switch -->
+        <div class="pricing-toggle-container">
+          <span class="pricing-toggle-label active" id="billing-monthly-lbl">Monthly</span>
+          <div class="pricing-switch-btn" id="pricing-switch"></div>
+          <span class="pricing-toggle-label" id="billing-yearly-lbl">Yearly (Save 20%)</span>
+        </div>
+
+        <!-- Pricing Cards Grid (Dynamically Populated by App JS) -->
+        <div class="pricing-grid" id="pricing-container"></div>
+
+        <!-- Partners Section -->
+        <div class="partners-section">
+          <h3 class="partners-title" id="partners-title">Trusted by Leading Companies</h3>
+          <div class="partners-logos">
+            <div class="partner-logo">
+              <!-- Mercado Livre SVG -->
+              <svg class="partner-logo-svg" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 28.5c-4.5 0-7.5-3-7.5-7.5s3-7.5 7.5-7.5 7.5 3 7.5 7.5-3 7.5-7.5 7.5zm0-12c-2.5 0-4.5 1.5-4.5 4.5s2 4.5 4.5 4.5 4.5-1.5 4.5-4.5-2-4.5-4.5-4.5z" fill="currentColor"/>
+                <path d="M22 14v14h-3V14h3zm5 2v12h-3V16h3zm0-3v-2h-3v2h3z" fill="currentColor"/>
+                <path d="M37 28.5c-4 0-6.5-2.5-6.5-6.5V14h3v8c0 2 1.5 3.5 3.5 3.5s3.5-1.5 3.5-3.5v-8h3v14h-3v-1.5c-1 1-2 1.5-3.5 1.5z" fill="currentColor"/>
+                <path d="M52 14c2.5 0 4.5 1 5.5 2.5V14h3v14h-3v-1.5c-1 1.5-3 2.5-5.5 2.5-4.5 0-7.5-3-7.5-7.5s3-7.5 7.5-7.5zm1 12c2.5 0 4-1.5 4-4.5s-1.5-4.5-4-4.5-4.5 1.5-4.5 4.5 2 4.5 4.5 4.5z" fill="currentColor"/>
+                <path d="M68.5 28.5c-4 0-6.5-2.5-6.5-6.5s2.5-6.5 6.5-6.5c2.5 0 4.5 1 5.5 2.5V14h3v14.5c0 4-3 6.5-7.5 6.5-3.5 0-6-1.5-7-3.5l2.5-1.5c.5 1 1.5 2 3.5 2 2.5 0 4.5-1.5 4.5-4.5v-1c-1 1.5-2.5 2.5-5 2.5zm.5-12c-2.5 0-4.5 1.5-4.5 4.5s2 4.5 4.5 4.5 4-1.5 4-4.5-1.5-4.5-4-4.5z" fill="currentColor"/>
+                <path d="M85 28.5c-4.5 0-7.5-3-7.5-7.5s3-7.5 7.5-7.5 7.5 3 7.5 7.5-3 7.5-7.5 7.5zm0-12c-2.5 0-4.5 1.5-4.5 4.5s2 4.5 4.5 4.5 4.5-1.5 4.5-4.5-2-4.5-4.5-4.5z" fill="currentColor"/>
+              </svg>
+              <span class="partner-text">mercado livre</span>
+            </div>
+            <div class="partner-logo">
+              <!-- Efi Bank SVG (Stylized geometry) -->
+              <svg class="partner-logo-svg" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="5" y="10" width="8" height="20" rx="2" fill="currentColor"/>
+                <rect x="17" y="10" width="16" height="5" rx="1.5" fill="currentColor"/>
+                <rect x="17" y="17" width="12" height="5" rx="1.5" fill="currentColor"/>
+                <rect x="17" y="25" width="16" height="5" rx="1.5" fill="currentColor"/>
+                <path d="M40 10v20h4V10h-4zM40 6v-2h4v2h-4z" fill="currentColor"/>
+                <path d="M50 10h12v4H50v-4zm0 8h9v4h-9v-4zm0 8h12v4H50v-4z" fill="currentColor"/>
+              </svg>
+              <span class="partner-text">Efi Bank</span>
+            </div>
+            <div class="partner-logo">
+              <!-- Mercado Pago SVG -->
+              <svg class="partner-logo-svg" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 28h-3V14h4l4 8 4-8h4v14h-3V18l-5 9h-1l-5-9v10z" fill="currentColor"/>
+                <path d="M26 21c0-4 3-7 7-7s7 3 7 7-3 7-7 7h-7v-14h3v11h4c2.5 0 4-1.5 4-4s-1.5-4-4-4h-4v7z" fill="currentColor"/>
+                <path d="M45 28l5-14h3l5 14h-3l-1.5-4.5h-5.5L47 28h-2zm6.5-7.5h4L53 15.5l-1.5 5z" fill="currentColor"/>
+                <path d="M63 21c0-4 3-7 7-7s7 3 7 7c0 4.5-3.5 7.5-8 7.5h-9v-14h3v11h6c2.5 0 4-1.5 4-4s-1.5-4-4-4h-3v4.5h-3v-1.5z" fill="currentColor"/>
+                <path d="M83 28c-4.5 0-7.5-3-7.5-7.5s3-7.5 7.5-7.5 7.5 3 7.5 7.5-3 7.5-7.5 7.5zm0-12c-2.5 0-4.5 1.5-4.5 4.5s2 4.5 4.5 4.5 4.5-1.5 4.5-4.5-2-4.5-4.5-4.5z" fill="currentColor"/>
+              </svg>
+              <span class="partner-text">Mercado Pago</span>
+            </div>
+            <div class="partner-logo">
+              <!-- PagSeguro SVG -->
+              <svg class="partner-logo-svg" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 14c4 0 7 3 7 7s-3 7-7 7H5v-14h7zm0 11c2.5 0 4-1.5 4-4s-1.5-4-4-4H8v8h4z" fill="currentColor"/>
+                <path d="M24 28l5-14h3l5 14h-3l-1.5-4.5H26L24.5 28H22zm5.5-7.5h4L30 15.5l-1.5 5z" fill="currentColor"/>
+                <path d="M44 28c-4 0-6.5-2.5-6.5-6.5s2.5-6.5 6.5-6.5c2.5 0 4.5 1 5.5 2.5V14h3v14.5c0 4-3 6.5-7.5 6.5-3.5 0-6-1.5-7-3.5l2.5-1.5c.5 1 1.5 2 3.5 2 2.5 0 4.5-1.5 4.5-4.5v-1c-1 1.5-2.5 2.5-5 2.5zm.5-12c-2.5 0-4.5 1.5-4.5 4.5s2 4.5 4.5 4.5 4-1.5 4-4.5-1.5-4.5-4-4.5z" fill="currentColor"/>
+                <path d="M57 26.5c1.5 1 3.5 1.5 5.5 1.5 4 0 6-2 6-4.5s-2-3.5-5-4l-2.5-.5c-2-.5-3.5-1-3.5-2.5s1.5-2.5 3.5-2.5c2 0 3.5.5 4.5 1.5l2-2.5c-1.5-1.5-3.5-2-5.5-2-4 0-6 2-6 4.5s2 3.5 5 4l2.5.5c2 .5 3.5 1 3.5 2.5s-1.5 2.5-3.5 2.5c-2.5 0-4.5-.5-5.5-2l-2 2.5z" fill="currentColor"/>
+                <path d="M78 14h12v3H78v-3zm0 5h9v3h-9v-3zm0 5h12v3H78v-3z" fill="currentColor"/>
+              </svg>
+              <span class="partner-text">PagSeguro</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="faq-title">Frequently Asked Questions</h2>
+          <p id="faq-subtitle">Got questions about Gest'Omni? We have answers.</p>
+        </div>
+
+        <!-- FAQ Items Container (Dynamically Populated by App JS) -->
+        <div class="faq-list" id="faq-container"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <img src="logo.png" alt="Gest'Omni Logo" class="brand-logo-img">
+            <span>Gest'Omni</span>
+          </div>
+          <p id="footer-tagline">Empowering local retailers and artisans worldwide to stand strong against global giants.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-link-group">
+            <h4>Gest'Omni</h4>
+            <ul>
+              <li><a href="#features" class="footer-nav-features" id="footer-link-features">Features</a></li>
+              <li><a href="#mission" class="footer-nav-mission" id="footer-link-mission">Our Purpose</a></li>
+              <li><a href="#pricing" class="footer-nav-pricing" id="footer-link-pricing">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="footer-link-group">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="#" id="footer-link-support">Support Help</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <span id="footer-rights">© 2026 Gest'Omni. All rights reserved. Powered by Supabase & Gemini AI.</span>
+
+        <!-- Discreet Access to Admin CMS Panel -->
+        <button class="admin-access-btn" id="admin-access-trigger">
+          <span id="footer-admin-portal">ADD</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Admin Panel Drawer (Overlay) -->
+  <div class="drawer-backdrop" id="admin-backdrop"></div>
+  <div class="admin-drawer" id="admin-drawer">
+    
+    <!-- Drawer Header -->
+    <div class="admin-drawer-header">
+      <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+        <span>Painel Administrativo</span>
+      </h3>
+      <button class="admin-close-btn" id="admin-close" aria-label="Fechar Painel">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Drawer Body -->
+    <div class="admin-drawer-body">
+      
+      <!-- Login View -->
+      <div class="admin-login-view" id="admin-login-view">
+        <div class="admin-login-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6d28d9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 12px; filter: drop-shadow(0 0 10px rgba(109, 40, 217, 0.4));">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <h4 style="font-size: 1.25rem;">Desbloquear Recursos do Admin</h4>
+          <p style="font-size: 0.9rem; color: hsl(var(--text-secondary)); margin-top: 6px;">Digite a senha para alterar valores, links e conteúdos do site.</p>
+        </div>
+        <div class="form-group">
+          <label for="admin-pass">Senha de Acesso</label>
+          <input type="password" id="admin-pass" placeholder="Digite a senha (padrão é 'admin')">
+          <span id="login-error-msg" style="color: hsl(0, 84%, 60%); font-size: 0.8rem; display: none; margin-top: 4px;">Senha incorreta. Tente novamente.</span>
+        </div>
+        <button class="btn btn-primary" id="admin-login-btn">Autenticar</button>
+      </div>
+
+      <!-- Editor Panel View (Unlocked State) -->
+      <div id="admin-editor-view" style="display: none;">
+        
+        <!-- CMS Languages Edit Selection Tab -->
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label for="edit-lang-select">Idioma em Edição</label>
+          <select id="edit-lang-select">
+            <option value="en">English (EN)</option>
+            <option value="pt">Português (PT)</option>
+          </select>
+        </div>
+        
+        <!-- CMS Tabs -->
+        <div class="admin-tabs">
+          <button class="admin-tab-btn active" data-tab="tab-general">Geral</button>
+          <button class="admin-tab-btn" data-tab="tab-images">Imagens</button>
+          <button class="admin-tab-btn" data-tab="tab-hero">Hero</button>
+          <button class="admin-tab-btn" data-tab="tab-mission">Missão</button>
+          <button class="admin-tab-btn" data-tab="tab-pricing">Planos</button>
+          <button class="admin-tab-btn" data-tab="tab-faq">Dúvidas (FAQ)</button>
+          <button class="admin-tab-btn" data-tab="tab-footer">Links do Rodapé</button>
+        </div>
+
+        <!-- General Settings Tab -->
+        <div class="admin-tab-content active" id="tab-general">
+          <div class="form-group" style="border: 1px solid hsl(var(--border)); padding: 12px; border-radius: 6px; margin-bottom: 16px;">
+            <h6 style="color: hsl(var(--primary-hover)); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">Configurações do Vídeo (Apresentação)</h6>
+            <div class="form-group" style="margin-bottom: 10px;">
+              <label for="input-youtube-pt" style="font-size: 0.75rem;">Vídeo em Português (PT-BR) - Link ou ID</label>
+              <input type="text" id="input-youtube-pt" placeholder="Ex: dQw4w9WgXcQ">
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="input-youtube-en" style="font-size: 0.75rem;">Vídeo em Inglês (EN-US) - Link ou ID</label>
+              <input type="text" id="input-youtube-en" placeholder="Ex: dQw4w9WgXcQ">
+            </div>
+            <small style="color: hsl(var(--text-muted)); font-size: 0.75rem; display: block; margin-top: 8px;">Links completos colados serão limpos automaticamente para suas IDs de 11 caracteres.</small>
+          </div>
+          
+          <div class="form-group">
+            <label>Cotação Comercial do Dólar (USD para BRL)</label>
+            <input type="text" id="input-live-rate" readonly style="background-color: hsl(var(--bg-dark) / 0.5); color: hsl(var(--secondary-hover)); font-weight: 600;">
+          </div>
+          <div class="form-group">
+            <label for="input-ga-id">ID do Google Analytics (Pixel)</label>
+            <input type="text" id="input-ga-id" placeholder="Ex: G-XXXXXXXXXX">
+            <small style="color: hsl(var(--text-muted)); font-size: 0.75rem; margin-top: 4px;">Insira o ID de métricas do Google Analytics 4 para ativar o rastreamento.</small>
+          </div>
+          <div class="form-group">
+            <label for="input-trial-link">Link de Teste Grátis (Definido pela API)</label>
+            <input type="url" id="input-trial-link" readonly style="background-color: hsl(var(--bg-dark) / 0.5); color: hsl(var(--secondary-hover)); font-weight: 600;">
+            <small style="color: hsl(var(--text-muted)); font-size: 0.72rem; margin-top: 4px; display: block;">Este link é definido dinamicamente pela API do plano em destaque (popular) no Supabase.</small>
+          </div>
+          <div class="form-group">
+            <label for="input-demo-link">Link de Agendamento de Demonstração</label>
+            <input type="url" id="input-demo-link">
+          </div>
+          <div class="form-group">
+            <label for="input-admin-password">Alterar Senha do Admin</label>
+            <input type="text" id="input-admin-password" placeholder="Nova senha de acesso">
+          </div>
+
+          <!-- Supabase Automation SQL Panel -->
+          <div class="form-group" style="border: 1px solid hsl(var(--border)); padding: 12px; border-radius: 6px; margin-top: 20px; background-color: hsl(var(--bg-card-hover) / 0.15);">
+            <h6 style="color: hsl(var(--secondary-hover)); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600; display: flex; align-items: center; gap: 6px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4-4-4"/><path d="M4 20V9a4 4 0 0 1 4-4h8"/></svg>
+              💡 Salvar Automático na Nuvem
+            </h6>
+            <p style="font-size: 0.75rem; color: hsl(var(--text-secondary)); margin-bottom: 8px; line-height: 1.4;">
+              Para salvar alterações automaticamente sem precisar baixar o arquivo e enviar ao GitHub, execute o script SQL abaixo no <strong>SQL Editor</strong> do seu console do Supabase:
+            </p>
+            <textarea readonly style="width: 100%; min-height: 140px; font-family: monospace; font-size: 0.72rem; background-color: hsl(var(--bg-dark)); color: hsl(var(--text-secondary)); padding: 8px; border-radius: 4px; border: 1px solid hsl(var(--border)); resize: none;" id="sql-script-box">-- 1. Cria a tabela de configurações da Landing Page
+CREATE TABLE IF NOT EXISTS public.landing_config (
+  id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  config jsonb NOT NULL,
+  updated_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- 2. Insere a linha de configuração inicial padrão
+INSERT INTO public.landing_config (id, config)
+VALUES (1, '{}'::jsonb)
+ON CONFLICT (id) DO NOTHING;
+
+-- 3. Habilita RLS (Segurança de Linha)
+ALTER TABLE public.landing_config ENABLE ROW LEVEL SECURITY;
+
+-- 4. Cria políticas que permitem acesso público (anon) para leitura e gravação
+CREATE POLICY "Allow public read access" ON public.landing_config
+  FOR SELECT TO anon USING (true);
+
+CREATE POLICY "Allow public write access" ON public.landing_config
+  FOR ALL TO anon USING (true);</textarea>
+            <button type="button" id="btn-copy-sql" class="btn btn-secondary btn-small" style="width: 100%; font-size: 0.75rem; margin-top: 8px; padding: 8px 12px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copiar Script SQL
+            </button>
+          </div>
+        </div>
+
+        <!-- Images Settings Tab -->
+        <div class="admin-tab-content" id="tab-images">
+          <div class="form-group" style="border: 1px solid hsl(var(--border)); padding: 12px; border-radius: 6px; margin-bottom: 16px;">
+            <h6 style="color: hsl(var(--secondary-hover)); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">Logo e Marca</h6>
+            <div class="image-edit-block" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <label style="font-size: 0.75rem; color: hsl(var(--text-secondary)); font-weight: 500;">Logo Principal</label>
+                <button type="button" class="btn-reset-image" data-key="logoImgUrl" style="background:none; border:none; color:hsl(var(--secondary-hover)); font-size:0.75rem; cursor:pointer;">Restaurar Padrão</button>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <img id="preview-logoImgUrl" class="media-preview-thumb" src="logo.png" style="width: 60px; height: 40px; object-fit: contain; background: rgba(255,255,255,0.05); border-radius: 4px; border: 1px solid hsl(var(--border));">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                  <input type="text" id="input-img-logoImgUrl" class="img-url-input" data-key="logoImgUrl" placeholder="URL da imagem (http...)">
+                  <input type="file" id="file-img-logoImgUrl" class="img-file-input" data-key="logoImgUrl" accept="image/*" style="font-size: 0.75rem; width: 100%;">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group" style="border: 1px solid hsl(var(--border)); padding: 12px; border-radius: 6px; margin-bottom: 16px;">
+            <h6 style="color: hsl(var(--secondary-hover)); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">Slides do Carrossel (Hero)</h6>
+            
+            <!-- Slide 1 -->
+            <div class="image-edit-block" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px; padding-bottom: 10px; border-bottom: 1px solid hsl(var(--border)/0.5);">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <label style="font-size: 0.75rem; color: hsl(var(--text-secondary));">Slide 1 - Banner</label>
+                <button type="button" class="btn-reset-image" data-key="heroBanner1Url" style="background:none; border:none; color:hsl(var(--secondary-hover)); font-size:0.75rem; cursor:pointer;">Restaurar Padrão</button>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <img id="preview-heroBanner1Url" class="media-preview-thumb" src="banner.png" style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px; border: 1px solid hsl(var(--border));">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                  <input type="text" id="input-img-heroBanner1Url" class="img-url-input" data-key="heroBanner1Url" placeholder="URL da imagem">
+                  <input type="file" id="file-img-heroBanner1Url" class="img-file-input" data-key="heroBanner1Url" accept="image/*" style="font-size: 0.75rem;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="image-edit-block" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px; padding-bottom: 10px; border-bottom: 1px solid hsl(var(--border)/0.5);">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <label style="font-size: 0.75rem; color: hsl(var(--text-secondary));">Slide 2 - Banner</label>
+                <button type="button" class="btn-reset-image" data-key="heroBanner2Url" style="background:none; border:none; color:hsl(var(--secondary-hover)); font-size:0.75rem; cursor:pointer;">Restaurar Padrão</button>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <img id="preview-heroBanner2Url" class="media-preview-thumb" src="video_cover.png" style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px; border: 1px solid hsl(var(--border));">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                  <input type="text" id="input-img-heroBanner2Url" class="img-url-input" data-key="heroBanner2Url" placeholder="URL da imagem">
+                  <input type="file" id="file-img-heroBanner2Url" class="img-file-input" data-key="heroBanner2Url" accept="image/*" style="font-size: 0.75rem;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="image-edit-block" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <label style="font-size: 0.75rem; color: hsl(var(--text-secondary));">Slide 3 - Banner</label>
+                <button type="button" class="btn-reset-image" data-key="heroBanner3Url" style="background:none; border:none; color:hsl(var(--secondary-hover)); font-size:0.75rem; cursor:pointer;">Restaurar Padrão</button>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <img id="preview-heroBanner3Url" class="media-preview-thumb" src="banner.png" style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px; border: 1px solid hsl(var(--border));">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                  <input type="text" id="input-img-heroBanner3Url" class="img-url-input" data-key="heroBanner3Url" placeholder="URL da imagem">
+                  <input type="file" id="file-img-heroBanner3Url" class="img-file-input" data-key="heroBanner3Url" accept="image/*" style="font-size: 0.75rem;">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group" style="border: 1px solid hsl(var(--border)); padding: 12px; border-radius: 6px; margin-bottom: 16px;">
+            <h6 style="color: hsl(var(--secondary-hover)); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">Capa da Seção de Vídeo</h6>
+            <div class="image-edit-block" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <label style="font-size: 0.75rem; color: hsl(var(--text-secondary));">Imagem de Capa</label>
+                <button type="button" class="btn-reset-image" data-key="videoCoverUrl" style="background:none; border:none; color:hsl(var(--secondary-hover)); font-size:0.75rem; cursor:pointer;">Restaurar Padrão</button>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <img id="preview-videoCoverUrl" class="media-preview-thumb" src="video_cover.png" style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px; border: 1px solid hsl(var(--border));">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                  <input type="text" id="input-img-videoCoverUrl" class="img-url-input" data-key="videoCoverUrl" placeholder="URL da imagem">
+                  <input type="file" id="file-img-videoCoverUrl" class="img-file-input" data-key="videoCoverUrl" accept="image/*" style="font-size: 0.75rem;">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group" style="border: 1px solid hsl(var(--border)); padding: 12px; border-radius: 6px; margin-bottom: 16px;">
+            <h6 style="color: hsl(var(--secondary-hover)); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">Frente dos Cards - Segmentos</h6>
+            
+            <!-- Seg 1 -->
+            <div class="image-edit-block" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px; padding-bottom: 10px; border-bottom: 1px solid hsl(var(--border)/0.5);">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <label style="font-size: 0.75rem; color: hsl(var(--text-secondary));">Lojas de Varejo</label>
+                <button type="button" class="btn-reset-image" data-key="cardFrontSegment1" style="background:none; border:none; color:hsl(var(--secondary-hover)); font-size:0.75rem; cursor:pointer;">Restaurar Padrão</button>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <img id="preview-cardFrontSegment1" class="media-preview-thumb" src="banner.png" style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px; border: 1px solid hsl(var(--border));">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                  <input type="text" id="input-img-cardFrontSegment1" class="img-url-input" data-key="cardFrontSegment1" placeholder="URL da imagem">
+                  <input type="file" id="file-img-cardFrontSegment1" class="img-file-input" data-key="cardFrontSegment1" accept="image/*" style="font-size: 0.75rem;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Seg 2 -->
+            <div class="image-edit-block" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px; padding-bottom: 10px; border-bottom: 1px solid hsl(var(--border)/0.5);">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <label style="font-size: 0.75rem; color: hsl(var(--text-secondary));">Artesãos & Ateliês</label>
+                <button type="button" class="btn-reset-image" data-key="cardFrontSegment2" style="background:none; border:none; color:hsl(var(--secondary-hover)); font-size:0.75rem; cursor:pointer;">Restaurar Padrão</button>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <img id="preview-cardFrontSegment2" class="media-preview-thumb" src="video_cover.png" style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px; border: 1px solid hsl(var(--border));">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                  <input type="text" id="input-img-cardFrontSegment2" class="img-url-input" data-key="cardFrontSegment2" placeholder="URL da imagem">
+                  <input type="file" id="file-img-cardFrontSegment2" class="img-file-input" data-key="cardFrontSegment2" accept="image/*" style="font-size: 0.75rem;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Seg 3 -->
+            <div class="image-edit-block" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <label style="font-size: 0.75rem; color: hsl(var(--text-secondary));">E-commerce</label>
+                <button type="button" class="btn-reset-image" data-key="cardFrontSegment3" style="background:none; border:none; color:hsl(var(--secondary-hover)); font-size:0.75rem; cursor:pointer;">Restaurar Padrão</button>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <img id="preview-cardFrontSegment3" class="media-preview-thumb" src="banner.png" style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px; border: 1px solid hsl(var(--border));">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                  <input type="text" id="input-img-cardFrontSegment3" class="img-url-input" data-key="cardFrontSegment3" placeholder="URL da imagem">
+                  <input type="file" id="file-img-cardFrontSegment3" class="img-file-input" data-key="cardFrontSegment3" accept="image/*" style="font-size: 0.75rem;">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group" style="border: 1px solid hsl(var(--border)); padding: 12px; border-radius: 6px; margin-bottom: 16px;">
+            <h6 style="color: hsl(var(--secondary-hover)); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">Frente dos Cards - Soluções</h6>
+            
+            <!-- Sol 1 -->
+            <div class="image-edit-block" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px; padding-bottom: 10px; border-bottom: 1px solid hsl(var(--border)/0.5);">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <label style="font-size: 0.75rem; color: hsl(var(--text-secondary));">PDV & Frente de Caixa</label>
+                <button type="button" class="btn-reset-image" data-key="cardFrontSolution1" style="background:none; border:none; color:hsl(var(--secondary-hover)); font-size:0.75rem; cursor:pointer;">Restaurar Padrão</button>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <img id="preview-cardFrontSolution1" class="media-preview-thumb" src="video_cover.png" style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px; border: 1px solid hsl(var(--border));">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                  <input type="text" id="input-img-cardFrontSolution1" class="img-url-input" data-key="cardFrontSolution1" placeholder="URL da imagem">
+                  <input type="file" id="file-img-cardFrontSolution1" class="img-file-input" data-key="cardFrontSolution1" accept="image/*" style="font-size: 0.75rem;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Sol 2 -->
+            <div class="image-edit-block" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px; padding-bottom: 10px; border-bottom: 1px solid hsl(var(--border)/0.5);">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <label style="font-size: 0.75rem; color: hsl(var(--text-secondary));">Importador Inteligente</label>
+                <button type="button" class="btn-reset-image" data-key="cardFrontSolution2" style="background:none; border:none; color:hsl(var(--secondary-hover)); font-size:0.75rem; cursor:pointer;">Restaurar Padrão</button>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <img id="preview-cardFrontSolution2" class="media-preview-thumb" src="banner.png" style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px; border: 1px solid hsl(var(--border));">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                  <input type="text" id="input-img-cardFrontSolution2" class="img-url-input" data-key="cardFrontSolution2" placeholder="URL da imagem">
+                  <input type="file" id="file-img-cardFrontSolution2" class="img-file-input" data-key="cardFrontSolution2" accept="image/*" style="font-size: 0.75rem;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Sol 3 -->
+            <div class="image-edit-block" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <label style="font-size: 0.75rem; color: hsl(var(--text-secondary));">Auditoria Imutável</label>
+                <button type="button" class="btn-reset-image" data-key="cardFrontSolution3" style="background:none; border:none; color:hsl(var(--secondary-hover)); font-size:0.75rem; cursor:pointer;">Restaurar Padrão</button>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <img id="preview-cardFrontSolution3" class="media-preview-thumb" src="video_cover.png" style="width: 60px; height: 40px; object-fit: cover; border-radius: 4px; border: 1px solid hsl(var(--border));">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                  <input type="text" id="input-img-cardFrontSolution3" class="img-url-input" data-key="cardFrontSolution3" placeholder="URL da imagem">
+                  <input type="file" id="file-img-cardFrontSolution3" class="img-file-input" data-key="cardFrontSolution3" accept="image/*" style="font-size: 0.75rem;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Settings Tab -->
+        <div class="admin-tab-content" id="tab-hero">
+          <div class="form-group">
+            <label for="input-hero-badge">Texto da Tag do Hero</label>
+            <input type="text" id="input-hero-badge">
+          </div>
+          <div class="form-group">
+            <label for="input-hero-title">Título Principal (Headline)</label>
+            <textarea id="input-hero-title"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="input-hero-subtitle">Subtítulo do Hero</label>
+            <textarea id="input-hero-subtitle" style="min-height: 120px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="input-hero-cta-start">Texto do Botão - Começar Teste</label>
+            <input type="text" id="input-hero-cta-start">
+          </div>
+          <div class="form-group">
+            <label for="input-hero-cta-watch">Texto do Botão - Assistir Vídeo</label>
+            <input type="text" id="input-hero-cta-watch">
+          </div>
+        </div>
+
+        <!-- Mission Settings Tab -->
+        <div class="admin-tab-content" id="tab-mission">
+          <div class="form-group">
+            <label for="input-mission-badge">Tag da Missão</label>
+            <input type="text" id="input-mission-badge">
+          </div>
+          <div class="form-group">
+            <label for="input-mission-title">Título da Missão</label>
+            <input type="text" id="input-mission-title">
+          </div>
+          <div class="form-group">
+            <label for="input-mission-desc1">Parágrafo da Missão 1</label>
+            <textarea id="input-mission-desc1" style="min-height: 120px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="input-mission-desc2">Parágrafo da Missão 2</label>
+            <textarea id="input-mission-desc2" style="min-height: 120px;"></textarea>
+          </div>
+          
+          <h5 style="margin: 15px 0 10px 0; font-size: 0.9rem; color: #fff;">Métricas e Estatísticas da Missão</h5>
+          
+          <div class="form-group">
+            <label for="input-stat1-num">Estatística 1 - Valor</label>
+            <input type="text" id="input-stat1-num">
+          </div>
+          <div class="form-group">
+            <label for="input-stat1-lbl">Estatística 1 - Rótulo</label>
+            <input type="text" id="input-stat1-lbl">
+          </div>
+          <div class="form-group">
+            <label for="input-stat2-num">Estatística 2 - Valor</label>
+            <input type="text" id="input-stat2-num">
+          </div>
+          <div class="form-group">
+            <label for="input-stat2-lbl">Estatística 2 - Rótulo</label>
+            <input type="text" id="input-stat2-lbl">
+          </div>
+          <div class="form-group">
+            <label for="input-stat3-num">Estatística 3 - Valor</label>
+            <input type="text" id="input-stat3-num">
+          </div>
+          <div class="form-group">
+            <label for="input-stat3-lbl">Estatística 3 - Rótulo</label>
+            <input type="text" id="input-stat3-lbl">
+          </div>
+        </div>
+
+        <!-- Pricing Settings Tab -->
+        <div class="admin-tab-content" id="tab-pricing">
+          <div class="form-group">
+            <label for="input-pricing-title">Planos - Título do Cabeçalho</label>
+            <input type="text" id="input-pricing-title">
+          </div>
+          <div class="form-group">
+            <label for="input-pricing-subtitle">Planos - Subtítulo do Cabeçalho</label>
+            <textarea id="input-pricing-subtitle"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="input-pricing-monthly-lbl">Legenda Cobrança Mensal</label>
+            <input type="text" id="input-pricing-monthly-lbl">
+          </div>
+          <div class="form-group">
+            <label for="input-pricing-yearly-lbl">Legenda Cobrança Anual</label>
+            <input type="text" id="input-pricing-yearly-lbl">
+          </div>
+          <div class="form-group">
+            <label for="input-pricing-trial-btn">Texto do Botão dos Planos</label>
+            <input type="text" id="input-pricing-trial-btn">
+          </div>
+
+          <!-- Supabase Real-Time API Integration Panel -->
+          <div style="border: 1px solid hsl(var(--border)); padding: 14px; border-radius: 6px; margin: 20px 0; background-color: hsl(var(--bg-card-hover) / 0.3);">
+            <h5 style="color: hsl(var(--secondary-hover)); font-size: 0.95rem; margin-bottom: 12px; font-weight: 600; display: flex; align-items: center; gap: 6px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              API de Planos Supabase (Dinâmico)
+            </h5>
+            
+            <div class="form-group" style="margin-bottom: 10px;">
+              <label for="input-supabase-url" style="font-size: 0.75rem;">Supabase URL</label>
+              <input type="url" id="input-supabase-url" placeholder="https://xxxx.supabase.co">
+            </div>
+            
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label for="input-supabase-anon-key" style="font-size: 0.75rem;">Chave Pública Anon (Anon Key)</label>
+              <textarea id="input-supabase-anon-key" placeholder="eyJhbGciOi..." style="min-height: 80px; font-family: monospace; font-size: 0.75rem;"></textarea>
+            </div>
+
+            <div style="margin-top: 10px;">
+              <a href="https://gestomni.app/admin-desenvolvedor" target="_blank" class="btn btn-secondary btn-small" style="width: 100%; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Painel do Desenvolvedor (Criar Planos)
+              </a>
+            </div>
+          </div>
+          
+          <h5 style="margin: 25px 0 15px 0; font-size: 0.95rem; color: #fff; border-top: 1px solid hsl(var(--border)); padding-top: 15px;">Preços Estáticos de Backup (config.json)</h5>
+          
+          <div id="admin-plans-prices-container">
+            <!-- Populated by App JS to allow side-by-side price edits -->
+          </div>
+        </div>
+
+        <!-- FAQ Settings Tab -->
+        <div class="admin-tab-content" id="tab-faq">
+          <div class="form-group">
+            <label for="input-faq-title">FAQ - Título do Cabeçalho</label>
+            <input type="text" id="input-faq-title">
+          </div>
+          <div class="form-group">
+            <label for="input-faq-subtitle">FAQ - Subtítulo do Cabeçalho</label>
+            <textarea id="input-faq-subtitle"></textarea>
+          </div>
+          
+          <h5 style="margin: 25px 0 15px 0; font-size: 0.95rem; color: #fff; border-top: 1px solid hsl(var(--border)); padding-top: 15px;">Editar Perguntas e Respostas</h5>
+          <div id="admin-faqs-container">
+            <!-- Populated by App JS dynamically based on default FAQ count -->
+          </div>
+        </div>
+
+        <!-- Footer Links Tab -->
+        <div class="admin-tab-content" id="tab-footer">
+          <div class="form-group" style="border: 1px solid hsl(var(--border)); padding: 12px; border-radius: 6px; margin-bottom: 16px; background-color: hsl(var(--bg-card-hover) / 0.05);">
+            <h6 style="color: hsl(var(--primary-hover)); font-size: 0.9rem; margin-bottom: 12px; font-weight: 600;">Grupo de Links: Gest'Omni</h6>
+            
+            <!-- Link 1: Recursos (Features) -->
+            <div style="border-bottom: 1px solid hsl(var(--border) / 0.5); padding-bottom: 12px; margin-bottom: 12px;">
+              <div class="form-group" style="margin-bottom: 8px;">
+                <label for="input-footer-features-pt" style="font-size: 0.75rem; font-weight: 600;">Link 1: Texto (Português)</label>
+                <input type="text" id="input-footer-features-pt" placeholder="Ex: Recursos">
+              </div>
+              <div class="form-group" style="margin-bottom: 8px;">
+                <label for="input-footer-features-en" style="font-size: 0.75rem; font-weight: 600;">Link 1: Texto (Inglês)</label>
+                <input type="text" id="input-footer-features-en" placeholder="Ex: Features">
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="input-footer-features-url" style="font-size: 0.75rem; font-weight: 600;">Link 1: Destino (URL ou #âncora)</label>
+                <input type="text" id="input-footer-features-url" placeholder="Ex: #features ou https://exemplo.com">
+              </div>
+            </div>
+
+            <!-- Link 2: Nosso Propósito (Mission) -->
+            <div style="border-bottom: 1px solid hsl(var(--border) / 0.5); padding-bottom: 12px; margin-bottom: 12px;">
+              <div class="form-group" style="margin-bottom: 8px;">
+                <label for="input-footer-mission-pt" style="font-size: 0.75rem; font-weight: 600;">Link 2: Texto (Português)</label>
+                <input type="text" id="input-footer-mission-pt" placeholder="Ex: Nosso Propósito">
+              </div>
+              <div class="form-group" style="margin-bottom: 8px;">
+                <label for="input-footer-mission-en" style="font-size: 0.75rem; font-weight: 600;">Link 2: Texto (Inglês)</label>
+                <input type="text" id="input-footer-mission-en" placeholder="Ex: Our Purpose">
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="input-footer-mission-url" style="font-size: 0.75rem; font-weight: 600;">Link 2: Destino (URL ou #âncora)</label>
+                <input type="text" id="input-footer-mission-url" placeholder="Ex: #mission ou https://exemplo.com">
+              </div>
+            </div>
+
+            <!-- Link 3: Planos (Pricing) -->
+            <div style="margin-bottom: 0;">
+              <div class="form-group" style="margin-bottom: 8px;">
+                <label for="input-footer-pricing-pt" style="font-size: 0.75rem; font-weight: 600;">Link 3: Texto (Português)</label>
+                <input type="text" id="input-footer-pricing-pt" placeholder="Ex: Planos">
+              </div>
+              <div class="form-group" style="margin-bottom: 8px;">
+                <label for="input-footer-pricing-en" style="font-size: 0.75rem; font-weight: 600;">Link 3: Texto (Inglês)</label>
+                <input type="text" id="input-footer-pricing-en" placeholder="Ex: Pricing">
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="input-footer-pricing-url" style="font-size: 0.75rem; font-weight: 600;">Link 3: Destino (URL ou #âncora)</label>
+                <input type="text" id="input-footer-pricing-url" placeholder="Ex: #pricing ou https://exemplo.com">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group" style="border: 1px solid hsl(var(--border)); padding: 12px; border-radius: 6px; margin-bottom: 16px; background-color: hsl(var(--bg-card-hover) / 0.05);">
+            <h6 style="color: hsl(var(--primary-hover)); font-size: 0.9rem; margin-bottom: 12px; font-weight: 600;">Grupo de Links: Contato</h6>
+            
+            <!-- Link 4: Suporte Técnico (Support) -->
+            <div style="margin-bottom: 0;">
+              <div class="form-group" style="margin-bottom: 8px;">
+                <label for="input-footer-support-pt" style="font-size: 0.75rem; font-weight: 600;">Link Suporte: Texto (Português)</label>
+                <input type="text" id="input-footer-support-pt" placeholder="Ex: Suporte Técnico">
+              </div>
+              <div class="form-group" style="margin-bottom: 8px;">
+                <label for="input-footer-support-en" style="font-size: 0.75rem; font-weight: 600;">Link Suporte: Texto (Inglês)</label>
+                <input type="text" id="input-footer-support-en" placeholder="Ex: Technical Support">
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="input-footer-support-url" style="font-size: 0.75rem; font-weight: 600;">Link Suporte: Destino (URL ou #âncora)</label>
+                <input type="text" id="input-footer-support-url" placeholder="Ex: https://suporte.gestomni.com">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Drawer Footer (Locked / Unlocked) -->
+    <div class="admin-drawer-footer" id="admin-drawer-footer" style="display: none;">
+      <!-- Success Toast Notification inside the footer -->
+      <div id="admin-save-toast" style="display: none; background-color: hsl(var(--secondary) / 0.15); border: 1px solid hsl(var(--secondary) / 0.3); color: hsl(var(--secondary-hover)); padding: 10px 14px; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600; text-align: center; margin-bottom: 12px; align-items: center; justify-content: center; gap: 8px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span id="admin-toast-text">Alterações salvas com sucesso!</span>
+      </div>
+
+      <button class="btn btn-primary" id="admin-save-btn" style="width: 100%; margin-bottom: 8px; background-color: hsl(var(--secondary)); border-color: hsl(var(--secondary)); box-shadow: 0 4px 15px hsl(var(--secondary) / 0.2);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+          <polyline points="17 21 17 13 7 13 7 21"></polyline>
+          <polyline points="7 3 7 8 15 8"></polyline>
+        </svg>
+        <span id="btn-save-text">Salvar Alterações</span>
+      </button>
+
+      <button class="btn btn-secondary" id="admin-download-btn" style="width: 100%; margin-bottom: 8px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Baixar config.json
+      </button>
+
+      <button class="btn btn-secondary btn-small" id="admin-reset-btn" style="width: 100%; font-size: 0.8rem; padding: 10px; border-color: transparent;">Restaurar Padrões de Fábrica</button>
+      <p class="admin-instructions" style="margin-top: 8px; line-height: 1.4;">
+        <strong>Instruções de Publicação:</strong> Clique em **Salvar Alterações** para salvar instantaneamente na nuvem (Supabase). Caso a tabela ainda não exista, as alterações serão salvas localmente no navegador; você pode copiar o script SQL na aba "Geral" para habilitar a nuvem, ou baixar o `config.json` e enviá-lo ao GitHub como backup.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
