@@ -947,6 +947,7 @@ nav {
 .pricing-section .container {
   max-width: 1500px;
   padding: 0 2%;
+  margin: 0 auto !important;
 }
 
 .pricing-toggle-container {
@@ -1002,7 +1003,8 @@ nav {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 400px));
+  justify-content: center;
   gap: 20px;
   align-items: stretch;
 }
