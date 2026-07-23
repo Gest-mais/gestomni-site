@@ -899,6 +899,10 @@ function hydrateDOM() {
   document.querySelectorAll(".brand-logo-img").forEach((img) => {
     img.src = siteConfig.logoImgUrl || "logo.png";
   });
+  const favicon = document.getElementById("favicon");
+  if (favicon) {
+    favicon.href = siteConfig.logoImgUrl || "logo.png";
+  }
 
   // Old hero logic removed
 
@@ -2877,6 +2881,7 @@ async function deleteVideoFromSupabase(videoUrl) {
     console.error("Erro ao excluir vídeo antigo:", e);
   }
 }
+
 
 
 

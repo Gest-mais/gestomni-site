@@ -7,7 +7,7 @@
   <title id="meta-title">Gest'Omni - Enterprise-Grade Retail & Financial Management for Small Businesses</title>
   
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%236d28d9%22/><path d=%22M30 40 L50 25 L70 40 L70 75 L30 75 Z%22 fill=%22none%22 stroke=%22white%22 stroke-width=%228%22 stroke-linejoin=%22round%22/><path d=%22M40 55 L50 65 L65 50%22 fill=%22none%22 stroke=%22%2310b981%22 stroke-width=%228%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+  <link id="favicon" rel="icon" type="image/png" href="logo.png">
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css">
@@ -846,6 +846,14 @@ CREATE POLICY "Allow public write access" ON public.landing_config
             <small style="color: hsl(var(--text-muted)); font-size: 0.75rem; display: block; margin-top: 8px;">Envie o vídeo que ficará rolando de fundo no topo do site.</small>
           </div>
 
+          <div class="form-group" style="border: 1px solid hsl(var(--border)); padding: 12px; border-radius: 6px; margin-bottom: 16px;">
+            <h6 style="color: hsl(var(--primary-hover)); font-size: 0.9rem; margin-bottom: 8px; font-weight: 600;">Velocidade de Rolagem (Altura)</h6>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <input type="number" id="input-scrollVideoHeight" class="global-input" data-key="scrollVideoHeight" placeholder="Ex: 300">
+            </div>
+            <small style="color: hsl(var(--text-muted)); font-size: 0.75rem; display: block; margin-top: 8px;">Altura da área do vídeo em <b>vh</b>. Padrão: 300. Quanto maior o valor, mais devagar o texto passará e mais tempo o usuário ficará na seção do vídeo.</small>
+          </div>
+
           <div class="form-group">
             <label for="input-hero-badge">Texto da Tag do Hero</label>
             <input type="text" id="input-hero-badge">
@@ -1103,6 +1111,7 @@ CREATE POLICY "Allow public write access" ON public.landing_config
   <script type="module" src="app.js"></script>
 </body>
 </html>
+
 
 
 
