@@ -60,64 +60,74 @@
   <!-- Main Content -->
   <main>
     
-    <!-- Hero Carousel Slider -->
-    <section class="hero-carousel-root" id="home">
-      <div class="carousel-container">
-        
-        <!-- Slide 1: Gest'Omni General -->
-        <div class="hero-slide active" id="hero-slide-1" style="background-image: linear-gradient(rgba(7, 10, 19, 0.4), rgba(7, 10, 19, 0.85)), url('banner.png');">
-          <div class="container slide-content-wrapper">
-            <div class="slide-left-text">
-              <span class="badge">🚀 Gest'Omni</span>
-              <h2 id="hero-slide1-title">Evolução Comercial Inteligente e Confiável.</h2>
-              <p id="hero-slide1-desc">Automatize a gestão, otimize o estoque e impulsione as vendas com nossa plataforma SaaS de nível corporativo. Experimente o futuro do seu negócio.</p>
-              <div class="hero-cta-container">
-                <a href="#pricing" class="btn btn-primary trial-btn" id="hero-slide1-btn">Começar Teste Grátis de 30 Dias</a>
-                <span class="hero-cta-subtext" id="hero-slide1-subtext">Sem necessidade de cartão</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 2: IA Invoice Parser -->
-        <div class="hero-slide" id="hero-slide-2" style="background-image: linear-gradient(rgba(7, 10, 19, 0.6), rgba(7, 10, 19, 0.9)), url('video_cover.png');">
-          <div class="container slide-content-wrapper">
-            <div class="slide-left-text">
-              <span class="badge">Gemini AI</span>
-              <h2>Leitor de Notas Fiscais com Inteligência Artificial</h2>
-              <p>Arraste e solte arquivos XML ou PDF de suas notas fiscais DANFE. Nossa inteligência artificial extrai fornecedores, produtos, quantidades e preços de custo em segundos.</p>
-              <a href="#pricing" class="btn btn-primary trial-btn">Iniciar Testes</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3: Multi-channel Sync -->
-        <div class="hero-slide" id="hero-slide-3" style="background-image: linear-gradient(rgba(7, 10, 19, 0.5), rgba(7, 10, 19, 0.85)), url('banner.png');">
-          <div class="container slide-content-wrapper">
-            <div class="slide-left-text">
-              <span class="badge">Integração</span>
-              <h2>Sincronização de Canais de Venda Online</h2>
-              <p>Sincronize seu estoque físico com anúncios da Shopee e Mercado Livre. Realize vendas na sua frente de caixa física (PDV) e veja seus estoques online atualizar em tempo real.</p>
-              <a href="#pricing" class="btn btn-primary trial-btn">Iniciar Testes</a>
-            </div>
-          </div>
-        </div>
-
+        <!-- Global Loader -->
+    <div id="global-loader">
+      <div class="loader-content">
+        <img src="logo.png" alt="Gest'Omni Logo" class="loader-logo">
+        <div class="spinner"></div>
+        <p>Conectando ao Supabase...</p>
       </div>
+    </div>
 
-      <!-- Slider Controls -->
-      <button class="slider-control prev" id="slider-prev" aria-label="Anterior">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
-      </button>
-      <button class="slider-control next" id="slider-next" aria-label="Próximo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
-      </button>
+    <!-- Scroll Video Banner Section -->
+    <section class="scroll-video-banner" id="home">
+      <div class="scroll-video-container">
+        <video
+          id="scroll-video"
+          src="video-para-banner.mp4"
+          muted
+          playsinline
+          autoplay
+          loop
+          preload="auto"
+        ></video>
 
-      <!-- Slider Indicators -->
-      <div class="slider-indicators">
-        <span class="slider-dot active" data-slide="0"></span>
-        <span class="slider-dot" data-slide="1"></span>
-        <span class="slider-dot" data-slide="2"></span>
+        <!-- Text Overlays -->
+        <div class="scroll-video-overlay left-aligned" id="scroll-overlay-1">
+          <span
+            class="badge badge-accent"
+            id="scroll-badge"
+            style="
+              margin-bottom: 20px;
+              display: inline-block;
+              font-size: 1.3rem;
+              padding: 10px 20px;
+            "
+          ></span>
+          <h1
+            id="scroll-title"
+            style="
+              color: #fff;
+              text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+              font-size: clamp(2.5rem, 5vw, 4rem);
+              line-height: 1.1;
+              margin: 0;
+              text-align: left;
+            "
+          ></h1>
+        </div>
+
+        <div id="scroll-overlay-2">
+          <div id="scroll-subtitle"></div>
+        </div>
+
+        <div class="scroll-video-overlay center-aligned" id="scroll-overlay-3">
+          <h1
+            id="scroll-welcome-text"
+            style="
+              color: #fff;
+              font-size: clamp(3rem, 6vw, 6rem);
+              text-shadow: 0 4px 25px rgba(0, 0, 0, 0.8);
+              margin: 0;
+              font-weight: 800;
+            "
+          >
+            Bem vindo ao Gest'Omni
+          </h1>
+        </div>
+
+        <!-- Bottom Gradient Blend -->
+        <div class="scroll-video-gradient-bottom"></div>
       </div>
     </section>
 
@@ -1070,3 +1080,7 @@ CREATE POLICY "Allow public write access" ON public.landing_config
   <script type="module" src="app.js"></script>
 </body>
 </html>
+
+
+
+
