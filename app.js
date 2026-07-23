@@ -881,9 +881,7 @@ function hydrateDOM() {
 
   const scrollVideoEl = document.getElementById("scroll-video");
   if (scrollVideoEl) {
-    if (siteConfig.heroBanner1Url) {
-      scrollVideoEl.poster = siteConfig.heroBanner1Url;
-    }
+    
     if (siteConfig.heroVideoUrl && scrollVideoEl.getAttribute("src") !== siteConfig.heroVideoUrl) {
       scrollVideoEl.src = siteConfig.heroVideoUrl;
       scrollVideoEl.load();
@@ -2879,6 +2877,7 @@ async function deleteVideoFromSupabase(videoUrl) {
     console.error("Erro ao excluir vídeo antigo:", e);
   }
 }
+
 
 
 

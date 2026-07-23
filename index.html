@@ -823,6 +823,29 @@ CREATE POLICY "Allow public write access" ON public.landing_config
 
         <!-- Hero Settings Tab -->
         <div class="admin-tab-content" id="tab-hero">
+          
+                  <div class="form-group" style="border: 4px dashed red; background-color: rgba(255,0,0,0.1); padding: 20px; border-radius: 6px; margin-bottom: 16px;">
+            <h6 style="color: red; font-size: 1.2rem; margin-bottom: 8px; font-weight: 900; background: yellow; padding: 5px; border: 2px solid red; display: inline-block;">👉 VÍDEO DE FUNDO (UPLOAD) 👈 AQUI!!!</h6>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <input
+                type="text"
+                id="input-video-url"
+                class="img-url-input"
+                data-key="heroVideoUrl"
+                placeholder="URL do arquivo .mp4 (Opcional)"
+              />
+              <input
+                type="file"
+                id="file-video-heroVideoUrl"
+                class="video-file-input"
+                data-key="heroVideoUrl"
+                accept="video/mp4,video/webm"
+                style="font-size: 0.75rem"
+              />
+            </div>
+            <small style="color: hsl(var(--text-muted)); font-size: 0.75rem; display: block; margin-top: 8px;">Envie o vídeo que ficará rolando de fundo no topo do site.</small>
+          </div>
+
           <div class="form-group">
             <label for="input-hero-badge">Texto da Tag do Hero</label>
             <input type="text" id="input-hero-badge">
@@ -1080,6 +1103,7 @@ CREATE POLICY "Allow public write access" ON public.landing_config
   <script type="module" src="app.js"></script>
 </body>
 </html>
+
 
 
 
