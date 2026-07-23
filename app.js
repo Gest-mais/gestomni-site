@@ -2728,6 +2728,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const video = document.getElementById("scroll-video");
 
   if (banner && video) {
+    video.pause();
     let videoDuration = 0;
     let targetTime = 0;
     let currentTime = 0;
@@ -2736,27 +2737,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     video.addEventListener("loadedmetadata", () => {
       videoDuration = video.duration;
+      video.pause();
     });
 
     if (video.readyState >= 1) {
       videoDuration = video.duration;
+      video.pause();
     }
 
     const renderLoop = () => {
       if (videoDuration > 0) {
+        // Garante que não busca exatamente o fim do vídeo (duration) onde navegadores piscam
+        const maxSafeTime = Math.max(0, videoDuration - 0.08);
+        const safeTarget = Math.min(maxSafeTime, Math.max(0, targetTime));
+
         // Verifica config dinâmica para usar suavização ou não
         const useLerp =
           siteConfig.scrollVideoLerp === true ||
           siteConfig.scrollVideoLerp === "true";
 
         if (useLerp) {
-          currentTime = lerp(currentTime, targetTime, 0.08);
+          currentTime = lerp(currentTime, safeTarget, 0.08);
           if (Math.abs(currentTime - video.currentTime) > 0.01) {
             video.currentTime = currentTime;
           }
         } else {
           // Sem lerp (instantâneo), resolve o problema de pulos caso o lerp atrapalhe os keyframes
-          currentTime = targetTime;
+          currentTime = safeTarget;
           if (Math.abs(currentTime - video.currentTime) > 0.01) {
             video.currentTime = currentTime;
           }
