@@ -654,23 +654,7 @@ function loadConfigFromCache() {
         "Cached configuration loaded synchronously to prevent flashing.",
       );
 
-      // Force migration to the new Supabase credentials if it's still using the old ones
-      if (
-        loadedConfig.supabaseUrl &&
-        loadedConfig.supabaseUrl.includes("mipuonyuunqizkoizftv")
-      ) {
-        console.log(
-          "Migrating Supabase credentials in local cache to the new project...",
-        );
-        loadedConfig.supabaseUrl = DEFAULT_CONFIG.supabaseUrl;
-        loadedConfig.supabaseAnonKey = DEFAULT_CONFIG.supabaseAnonKey;
-        try {
-          localStorage.setItem(
-            "gestomni_landing_config",
-            JSON.stringify(loadedConfig),
-          );
-        } catch (e) {}
-      }
+      // Cached config loaded successfully
     }
   } catch (e) {
     console.error("Error loading configuration from localStorage:", e);
@@ -1013,25 +997,19 @@ function hydrateDOM() {
   safeSetText("pricing-title", t.pricing.title);
   safeSetText("pricing-subtitle", t.pricing.subtitle);
 
-  let middleDiscount = 20; // default fallback
+  let maxDiscount = 20; // default fallback
   const useDatabasePlans = databasePlans && databasePlans.length > 0;
   if (useDatabasePlans) {
-    const middlePlan =
-      databasePlans.find(
-        (plan) =>
-          plan.display_order === 2 ||
-          plan.name.toLowerCase().includes("growth") ||
-          plan.name.toLowerCase().includes("crescimento"),
-      ) ||
-      databasePlans[1] ||
-      databasePlans[0];
-    if (middlePlan) {
-      middleDiscount = Number(
-        middlePlan.yearly_discount_percent !== null &&
-          middlePlan.yearly_discount_percent !== undefined
-          ? middlePlan.yearly_discount_percent
-          : 20,
-      );
+    const discounts = databasePlans
+      .map((plan) =>
+        plan.yearly_discount_percent !== null &&
+        plan.yearly_discount_percent !== undefined
+          ? Number(plan.yearly_discount_percent)
+          : 0,
+      )
+      .filter((d) => !isNaN(d));
+    if (discounts.length > 0) {
+      maxDiscount = Math.max(...discounts);
     }
   } else {
     const staticPlans = t.pricing.plans || [];
@@ -1040,12 +1018,12 @@ function hydrateDOM() {
       const fullMonthly = middlePlan.priceMonthly * 12;
       const discount =
         ((fullMonthly - middlePlan.priceYearly) / fullMonthly) * 100;
-      middleDiscount = Math.round(discount);
+      maxDiscount = Math.round(discount);
     } else if (staticPlans.length > 0) {
       const p = staticPlans[0];
       const fullMonthly = p.priceMonthly * 12;
       const discount = ((fullMonthly - p.priceYearly) / fullMonthly) * 100;
-      middleDiscount = Math.round(discount);
+      maxDiscount = Math.round(discount);
     }
   }
 
@@ -1053,8 +1031,8 @@ function hydrateDOM() {
 
   const yearlyHtml =
     activeLang === "en"
-      ? `Yearly <span class="discount-badge" style="background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.2); color: #0f3562; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; margin-left: 6px; display: inline-block;">Save up to ${middleDiscount}%</span>`
-      : `Anual <span class="discount-badge" style="background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.2); color: #0f3562; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; margin-left: 6px; display: inline-block;">Economize até ${middleDiscount}%</span>`;
+      ? `Yearly <span class="discount-badge" style="background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.2); color: #0f3562; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; margin-left: 6px; display: inline-block;">Save up to ${maxDiscount}%</span>`
+      : `Anual <span class="discount-badge" style="background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.2); color: #0f3562; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; margin-left: 6px; display: inline-block;">Economize até ${maxDiscount}%</span>`;
   safeSetHtml("billing-yearly-lbl", yearlyHtml);
 
   // Hydrate Data-EN and Data-PT HTML Attributes
@@ -1242,9 +1220,16 @@ function renderPricing(plans, perMonthLabel, perYearLabel, trialBtnLabel) {
         }
 
         // Dynamic context-aware Vercel checkout redirection
-        checkoutLink =
-          plan.checkout_url ||
-          `https://gestomni-app.vercel.app/auth?signup=true&plan=${plan.id}&interval=${isYearlyBilling ? "yearly" : "monthly"}`;
+        const intervalParam = isYearlyBilling ? "yearly" : "monthly";
+        if (plan.checkout_url && plan.checkout_url.trim() !== "") {
+          let url = plan.checkout_url;
+          if (!url.includes("interval=")) {
+            url += url.includes("?") ? `&interval=${intervalParam}` : `?interval=${intervalParam}`;
+          }
+          checkoutLink = url;
+        } else {
+          checkoutLink = `https://gestomni-app.vercel.app/auth?signup=true&plan=${plan.id}&interval=${intervalParam}`;
+        }
         
         planFeatures = activeLang === "pt" ? (plan.features || []) : (localizedPlan.features || plan.features || []);
         planDescription = activeLang === "pt" ? (plan.description || "") : (localizedPlan.description || plan.description || "");
