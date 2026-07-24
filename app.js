@@ -11,7 +11,7 @@ const DEFAULT_CONFIG = {
   trialLink: "https://gestomni.com/signup",
   demoLink: "https://calendly.com/gestomni/demo",
   googleAnalyticsId: "",
-  heroVideoUrl: "video-para-banner.mp4",
+  heroVideoUrl: "Video-Para-Banner.mp4",
   supabaseUrl: "https://mipuonyuunqizkoizftv.supabase.co",
   supabaseAnonKey:
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1pcHVvbnl1dW5xaXprb2l6ZnR2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUyMDQ2ODIsImV4cCI6MjA3MDc4MDY4Mn0.BTUrOj-bnun_urU73WNQkVKJ6B8_qzKP5Ad0P_GO6lM",
@@ -533,6 +533,9 @@ async function fetchPlansFromSupabase() {
         databasePlans,
       );
 
+      // Immediately re-render pricing section with fetched active plans
+      hydrateDOM();
+
       // Define o link de teste grátis dinamicamente pelo plano em destaque (popular)
       if (databasePlans && databasePlans.length > 0) {
         const popularPlan =
@@ -881,12 +884,9 @@ function hydrateDOM() {
 
   const scrollVideoEl = document.getElementById("scroll-video");
   if (scrollVideoEl) {
-    
-    if (siteConfig.heroVideoUrl && scrollVideoEl.getAttribute("src") !== siteConfig.heroVideoUrl) {
-      scrollVideoEl.src = siteConfig.heroVideoUrl;
-      scrollVideoEl.load();
-    } else if (!siteConfig.heroVideoUrl && scrollVideoEl.getAttribute("src") !== "video-para-banner.mp4") {
-      scrollVideoEl.src = "video-para-banner.mp4";
+    const videoUrl = siteConfig.heroVideoUrl || "Video-Para-Banner.mp4";
+    if (scrollVideoEl.getAttribute("src") !== videoUrl) {
+      scrollVideoEl.src = videoUrl;
       scrollVideoEl.load();
     }
   }
