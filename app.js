@@ -654,7 +654,23 @@ function loadConfigFromCache() {
         "Cached configuration loaded synchronously to prevent flashing.",
       );
 
-      // Cached config loaded successfully
+      // Auto-migrate cache if pointing to old Supabase project
+      if (
+        !loadedConfig.supabaseUrl ||
+        loadedConfig.supabaseUrl.includes("okvvtrcdwshzfjfapgyl")
+      ) {
+        console.log(
+          "Migrating Supabase credentials in local cache to the active app project (mipuonyuunqizkoizftv)...",
+        );
+        loadedConfig.supabaseUrl = DEFAULT_CONFIG.supabaseUrl;
+        loadedConfig.supabaseAnonKey = DEFAULT_CONFIG.supabaseAnonKey;
+        try {
+          localStorage.setItem(
+            "gestomni_landing_config",
+            JSON.stringify(loadedConfig),
+          );
+        } catch (e) {}
+      }
     }
   } catch (e) {
     console.error("Error loading configuration from localStorage:", e);
