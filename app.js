@@ -2,6 +2,13 @@
    Gest'Omni Landing Page - Modern Dynamic Bilingual CMS Logic
    ========================================================================== */
 
+// Configuração do Supabase do Aplicativo Principal (onde ficam os planos de assinatura)
+const APP_SUPABASE_CONFIG = {
+  supabaseUrl: "https://mipuonyuunqizkoizftv.supabase.co",
+  supabaseAnonKey:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1pcHVvbnl1dW5xaXprb2l6ZnR2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUyMDQ2ODIsImV4cCI6MjA3MDc4MDY4Mn0.BTUrOj-bnun_urU73WNQkVKJ6B8_qzKP5Ad0P_GO6lM",
+};
+
 // --- Default Fallback Configuration Object ---
 // (Ensures the page works 100% offline or locally via file:/// protocol without CORS blocks)
 const DEFAULT_CONFIG = {
@@ -12,9 +19,10 @@ const DEFAULT_CONFIG = {
   demoLink: "https://calendly.com/gestomni/demo",
   googleAnalyticsId: "",
   heroVideoUrl: "Video-Para-Banner.mp4",
-  supabaseUrl: "https://mipuonyuunqizkoizftv.supabase.co",
+  supabaseUrl: "https://okvvtrcdwshzfjfapgyl.supabase.co",
   supabaseAnonKey:
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1pcHVvbnl1dW5xaXprb2l6ZnR2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUyMDQ2ODIsImV4cCI6MjA3MDc4MDY4Mn0.BTUrOj-bnun_urU73WNQkVKJ6B8_qzKP5Ad0P_GO6lM",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9rdnZ0cmNkd3NoemZqZmFwZ3lsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI2OTYzMTEsImV4cCI6MjA5ODI3MjMxMX0.rYIe3S1yM1p2i-dO1b_n_21jOqCly8wU7F9-iVn6gQ4",
+  partner1Name: "Mercado Livre",
   partner1Name: "Mercado Livre",
   partner2Name: "Efi Bank",
   partner3Name: "Mercado Pago",
@@ -509,9 +517,8 @@ window.addEventListener("DOMContentLoaded", async () => {
  * Fetches active plans dynamically from the Supabase database.
  */
 async function fetchPlansFromSupabase() {
-  const supabaseUrl = siteConfig.supabaseUrl || DEFAULT_CONFIG.supabaseUrl;
-  const supabaseAnonKey =
-    siteConfig.supabaseAnonKey || DEFAULT_CONFIG.supabaseAnonKey;
+  const supabaseUrl = APP_SUPABASE_CONFIG.supabaseUrl;
+  const supabaseAnonKey = APP_SUPABASE_CONFIG.supabaseAnonKey;
 
   try {
     const response = await fetch(
@@ -657,13 +664,13 @@ function loadConfigFromCache() {
         "Cached configuration loaded synchronously to prevent flashing.",
       );
 
-      // Auto-migrate cache if pointing to old Supabase project
+      // Auto-migrate cache if CMS URL was set to app database
       if (
         !loadedConfig.supabaseUrl ||
-        loadedConfig.supabaseUrl.includes("okvvtrcdwshzfjfapgyl")
+        loadedConfig.supabaseUrl.includes("mipuonyuunqizkoizftv")
       ) {
         console.log(
-          "Migrating Supabase credentials in local cache to the active app project (mipuonyuunqizkoizftv)...",
+          "Restoring CMS Supabase credentials (okvvtrcdwshzfjfapgyl) for images & admin portal...",
         );
         loadedConfig.supabaseUrl = DEFAULT_CONFIG.supabaseUrl;
         loadedConfig.supabaseAnonKey = DEFAULT_CONFIG.supabaseAnonKey;
