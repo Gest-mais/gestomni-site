@@ -12,9 +12,9 @@ const DEFAULT_CONFIG = {
   demoLink: "https://calendly.com/gestomni/demo",
   googleAnalyticsId: "",
   heroVideoUrl: "video-para-banner.mp4",
-  supabaseUrl: "https://okvvtrcdwshzfjfapgyl.supabase.co",
+  supabaseUrl: "https://mipuonyuunqizkoizftv.supabase.co",
   supabaseAnonKey:
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9rdnZ0cmNkd3NoemZqZmFwZ3lsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI2OTYzMTEsImV4cCI6MjA5ODI3MjMxMX0.FrR1d79hnJKDzBpZZl9Ddp1fjmuHYQ9Zadq4VC8Hilo",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1pcHVvbnl1dW5xaXprb2l6ZnR2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUyMDQ2ODIsImV4cCI6MjA3MDc4MDY4Mn0.BTUrOj-bnun_urU73WNQkVKJ6B8_qzKP5Ad0P_GO6lM",
   partner1Name: "Mercado Livre",
   partner2Name: "Efi Bank",
   partner3Name: "Mercado Pago",
