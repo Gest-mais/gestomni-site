@@ -21,7 +21,7 @@ const DEFAULT_CONFIG = {
   heroVideoUrl: "Video-Para-Banner.mp4",
   supabaseUrl: "https://okvvtrcdwshzfjfapgyl.supabase.co",
   supabaseAnonKey:
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9rdnZ0cmNkd3NoemZqZmFwZ3lsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI2OTYzMTEsImV4cCI6MjA5ODI3MjMxMX0.rYIe3S1yM1p2i-dO1b_n_21jOqCly8wU7F9-iVn6gQ4",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9rdnZ0cmNkd3NoemZqZmFwZ3lsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI2OTYzMTEsImV4cCI6MjA5ODI3MjMxMX0.FrR1d79hnJKDzBpZZl9Ddp1fjmuHYQ9Zadq4VC8Hilo",
   partner1Name: "Mercado Livre",
   partner1Name: "Mercado Livre",
   partner2Name: "Efi Bank",
@@ -664,10 +664,11 @@ function loadConfigFromCache() {
         "Cached configuration loaded synchronously to prevent flashing.",
       );
 
-      // Auto-migrate cache if CMS URL was set to app database
+      // Auto-migrate cache if CMS URL or Anon Key is outdated/invalid
       if (
         !loadedConfig.supabaseUrl ||
-        loadedConfig.supabaseUrl.includes("mipuonyuunqizkoizftv")
+        loadedConfig.supabaseUrl.includes("mipuonyuunqizkoizftv") ||
+        loadedConfig.supabaseAnonKey !== DEFAULT_CONFIG.supabaseAnonKey
       ) {
         console.log(
           "Restoring CMS Supabase credentials (okvvtrcdwshzfjfapgyl) for images & admin portal...",
